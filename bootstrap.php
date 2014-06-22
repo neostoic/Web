@@ -10,6 +10,8 @@ require_once("./vendor/fouroneone/session/FourOneOne/Session/Session.php");
 
 // Load not-autoloaded-things
 require_once("./src/config/config.php");
+require_once("./src/config/foursquare.php");
+require_once("./src/config/google.php");
 require_once("./src/lib/mail.php");
 
 // Decide if we're the API version or the Web version

@@ -20,4 +20,21 @@ class Auth{
     ));
     return $gClient;
   }
+
+  static public function get_foursquare_auth(){
+    $client = new \TheTwelve\Foursquare\HttpClient\CurlHttpClient();
+    $redirector = new \TheTwelve\Foursquare\Redirector\HeaderRedirector();
+    $factory = new \TheTwelve\Foursquare\ApiGatewayFactory($client, $redirector);
+    $factory->setClientCredentials(FOURSQUARE_ID, FOURSQUARE_SECRET);
+    $factory->setEndpointUri('https://api.foursquare.com');
+    $factory->useVersion(2);
+    $factory->verifiedOn(new \DateTime());
+    $auth = $factory->getAuthenticationGateway(
+      'https://foursquare.com/oauth2/authorize',
+      'https://foursquare.com/oauth2/access_token',
+      'YOUR_REDIRECT_URL'
+    );
+
+    return array($client, $redirector, $factory, $auth);
+  }
 }

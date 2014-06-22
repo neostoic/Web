@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "736232cfacf2fd2da2ee886a58dc37f8",
+    "hash": "6c6a05363b4d0ef2a02f389d2c991139",
     "packages": [
         {
             "name": "endroid/qrcode",
@@ -85,7 +85,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eventsd/eventsd.git",
-                "reference": "86f98f06c98b4a3d90ac3899ab0efe198c810b4a"
+                "reference": "8aa512834b1a563fdf5e926dfabf43ca78ca961e"
             },
             "require": {
                 "eventsd/eventsd": "dev-master",
@@ -103,7 +103,7 @@
                     "email": "matthew@baggett.me"
                 }
             ],
-            "time": "2014-06-22 12:36:59"
+            "time": "2014-06-22 18:32:48"
         },
         {
             "name": "filp/whoops",
@@ -251,6 +251,51 @@
             ],
             "description": "Support multi-lingual in YOUR application! :D",
             "time": "2013-11-25 11:32:10"
+        },
+        {
+            "name": "google/apiclient",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/google-api-php-client.git",
+                "reference": "a62fc373aebd78160db4dff4a8fd63aae5ea9cc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/a62fc373aebd78160db4dff4a8fd63aae5ea9cc9",
+                "reference": "a62fc373aebd78160db4dff4a8fd63aae5ea9cc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "src/"
+            ],
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "time": "2014-06-20 07:17:19"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -517,6 +562,58 @@
             "time": "2014-06-13 11:44:54"
         },
         {
+            "name": "thetwelvelabs/foursquare",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/chriswoodford/foursquare-php.git",
+                "reference": "9273f793f2c4c8b862c8892862865551e869c5cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/chriswoodford/foursquare-php/zipball/9273f793f2c4c8b862c8892862865551e869c5cc",
+                "reference": "9273f793f2c4c8b862c8892862865551e869c5cc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "haxx-se/curl": "1.0.0",
+                "kriswallsmith/buzz": "0.7.*",
+                "symfony/http-foundation": "2.2.*"
+            },
+            "suggest": {
+                "kriswallsmith/buzz": "Use Buzz for HTTP Requests",
+                "symfony/http-foundation": "Use Symfony for HTTP Requests and/or Redirects"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "TheTwelve\\Foursquare\\": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Woodford",
+                    "email": "chris.woodford@gmail.com",
+                    "homepage": "http://ideaphp.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Foursquare API Client",
+            "homepage": "http://thetwelvelabs.com",
+            "keywords": [
+                "foursquare"
+            ],
+            "time": "2014-01-07 01:49:29"
+        },
+        {
             "name": "wisembly/elephant.io",
             "version": "dev-master",
             "source": {
@@ -623,7 +720,9 @@
         "raveren/kint": 20,
         "eventsd/eventsd": 20,
         "eventsd/service": 20,
-        "wisembly/elephant.io": 20
+        "wisembly/elephant.io": 20,
+        "google/apiclient": 20,
+        "thetwelvelabs/foursquare": 20
     },
     "platform": [
 

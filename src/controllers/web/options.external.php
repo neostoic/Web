@@ -27,6 +27,11 @@ $app->post('/options/external-accounts/connect', function () use ($app) {
     header("Location: " . $app->view()->url("options/external-accounts/connect/google-drive"));
     exit;
   }
+
+  if($external_account_type->name == 'Foursquare'){
+    header("Location: " . $app->view()->url("options/external-accounts/connect/foursquare"));
+    exit;
+  }
   exit;
 });
 

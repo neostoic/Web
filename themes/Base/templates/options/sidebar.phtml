@@ -1,8 +1,9 @@
 <div class="col-md-3">
   <div class="list-group">
-    <a class="list-group-item <?php echo $_SERVER['REQUEST_URI'] == '/options'?'active':''; ?>" href="<?php echo $this->url("options"); ?>">My Gone.io Account.</a>
-    <a class="list-group-item <?php echo $_SERVER['REQUEST_URI'] == '/options/external-accounts'?'active':''; ?>" href="<?php echo $this->url("options/external-accounts"); ?>">My External Accounts.</a>
-    <a class="list-group-item <?php echo $_SERVER['REQUEST_URI'] == '/options/privacy'?'active':''; ?>" href="<?php echo $this->url("options/privacy"); ?>">My Privacy Options.</a>
+    <a class="list-group-item <?php echo $_SERVER['REQUEST_URI'] == '/options'?'active':''; ?>" href="<?php echo $this->url("options"); ?>"><?php echo $this->t("My @sitename Account.", array('@sitename' => APP_NAME)); ?></a>
+    <a class="list-group-item <?php echo $_SERVER['REQUEST_URI'] == '/options/external-accounts'?'active':''; ?>" href="<?php echo $this->url("options/external-accounts"); ?>"><?php echo $this->t("My External Accounts."); ?></a>
+    <a class="list-group-item <?php echo $_SERVER['REQUEST_URI'] == '/options/webhooks'?'active':''; ?>" href="<?php echo $this->url("options/webhooks"); ?>"><?php echo $this->t("My Webhooks."); ?></a>
+    <a class="list-group-item <?php echo $_SERVER['REQUEST_URI'] == '/options/privacy'?'active':''; ?>" href="<?php echo $this->url("options/privacy"); ?>"><?php echo $this->t("My Privacy Options."); ?></a>
   </div>
 </div>
 
