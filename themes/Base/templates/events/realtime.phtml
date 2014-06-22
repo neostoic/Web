@@ -1,0 +1,29 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Application</th>
+      <th>Event</th>
+      <th>Value</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($occurrences as $occurrence): ?>
+      <?php /* @var $occurrence \Eventsd\Models\Occurrence */ ?>
+      <tr>
+        <td><?php echo $occurrence->get_api_key()->get_application()->name; ?></td>
+        <td><?php echo $occurrence->event; ?></td>
+        <td>
+          <?php if($occurrence->get_value() == ''): ?>
+            --
+          <?php elseif($occurrence->value_is_json()): ?>
+            <?php Kint::dump(json_decode($occurrence->get_value())); ?>
+          <?php else: ?>
+            <?php echo $occurrence->get_value(); ?>
+          <?php endif; ?>
+        </td>
+        <td><?php echo $occurrence->local_time; ?></td>
+      </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>

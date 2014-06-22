@@ -1,7 +1,9 @@
 <?php
+use Eventsd\Models\User;
 
 $app->get('/dashboard', function () use ($app) {
-  \Skeleton\Models\User::check_logged_in();
+
+  User::check_logged_in();
 
   $app->render('dashboard/dashboard.phtml', array());
 });

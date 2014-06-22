@@ -1,0 +1,19 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Application</th>
+      <th>Events</th>
+      <th>Activity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($applications as $application): ?>
+      <?php /* @var $application \Eventsd\Models\Application */ ?>
+      <tr>
+        <td><?php echo $application->name; ?></td>
+        <td><?php echo $application->count_events(); ?></td>
+        <td><?php echo $application->count_occurrences(); ?></td>
+      </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>

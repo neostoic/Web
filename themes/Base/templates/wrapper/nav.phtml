@@ -1,3 +1,6 @@
+<?php
+use Eventsd\Models\User;
+?>
 <div role="navigation" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -11,10 +14,13 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><?php echo $this->l("events/realtime", $this->t("Public Events")); ?></li>
+              <?php if(isset($_SESSION['user']) && $_SESSION['user'] instanceof User): ?>
+                <li><?php echo $this->l("apps", $this->t("My Applications")); ?></li>
+                <li><?php echo $this->l("events/realtime", $this->t("My Events")); ?></li>
+              <?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <?php if(isset($_SESSION['user']) && $_SESSION['user'] instanceof \Skeleton\Models\User): ?>
+                <?php if(isset($_SESSION['user']) && $_SESSION['user'] instanceof User): ?>
                   <li><a>Hello, <?php echo $_SESSION['user']->username; ?></a></li>
                   <li><?php echo $this->l("logout", $this->t("Logout")); ?></li>
                 <?php else: ?>

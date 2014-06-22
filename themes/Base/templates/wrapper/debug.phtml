@@ -1,4 +1,8 @@
-<?php if(\Skeleton\Models\User::get_current() instanceof \Skeleton\Models\User && \Skeleton\Models\User::get_current()->is_admin()): ?>
+<?php
+use Eventsd\Models\User;
+?>
+
+<?php if(User::get_current() instanceof User && User::get_current()->is_admin()): ?>
   <hr/>
 
   <?php

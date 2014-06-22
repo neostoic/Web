@@ -1,5 +1,7 @@
 <?php
 
+use Eventsd\Models\User;
+
 $app->get('/login', function () use ($app) {
   $app->render('user/login.phtml', array(
     'no_wrap' => true,
@@ -12,15 +14,15 @@ $app->post('/login', function () use ($app, $session) {
   $password = $app->request()->post('password');
 
   // Support logging in with email address
-  $user = \Skeleton\Models\User::search()->where('email', $username)->where('password', hash("SHA1", $password))->execOne();
+  $user = User::search()->where('email', $username)->where('password', hash("SHA1", $password))->execOne();
 
   // Support logging in with username
-  if(!$user instanceof \Skeleton\Models\User){
-    $user = \Skeleton\Models\User::search()->where('username', $username)->where('password', hash("SHA1", $password))->execOne();
+  if(!$user instanceof User){
+    $user = User::search()->where('username', $username)->where('password', hash("SHA1", $password))->execOne();
   }
 
   // Check login failure.
-  if(!$user instanceof \Skeleton\Models\User){
+  if(!$user instanceof User){
       header("Location: login?failed");
       exit;
   }else{
@@ -46,7 +48,7 @@ $app->post('/register', function () use ($app) {
     exit;
   }
 
-  if(\Skeleton\Models\User::search()->where('username', $_POST['username'])->count() > 0){
+  if(User::search()->where('username', $_POST['username'])->count() > 0){
     header("Location: register?failed=" . urlencode("Username in use."));
     exit;
   }
@@ -61,7 +63,7 @@ $app->post('/register', function () use ($app) {
     exit;
   }
 
-  $user = new \Skeleton\Models\User();
+  $user = new User();
   $user->username = $_POST['username'];
   $user->password = hash("SHA1", $_POST['password']);
   $user->displayname = $_POST['realname'];

@@ -24,13 +24,17 @@ switch(gethostname()){
     $database = new \FourOneOne\ActiveRecord\DatabaseLayer(array(
       'db_type'     => 'Mysql',
       //'db_hostname' => 'quentin.vpn.thru.io',
-      'db_hostname' => 'localhost',
+      'db_hostname' => '127.0.0.1',
       'db_port'     => '3306',
       'db_username' => 'eventsd',
       'db_password' => 'SHF347GCZrcZfqZf',
       'db_database' => 'eventsd'
     ));
 }
+
+define('EVENTSD_BIND', '0.0.0.0');
+define('EVENTSD_PORT', '3465');
+define('EVENTSD_PUBLIC_HOST', 'localhost');
 
 // PHP Settings
 error_reporting(E_ALL);
@@ -48,7 +52,7 @@ $mailer_from = array("system@example.com" => "Example");
 $mailer_default_to = array("you@example.com");
 
 \Eventsd\Eventsd::configure(array(
-  'Server' => 'localhost',
-  'Port' => 3465,
+  'Server' => EVENTSD_PUBLIC_HOST,
+  'Port' => EVENTSD_PORT,
   'Key' => 'fe451eb5-6c97-491e-9a66-23c7b4d528aa',
 ));
