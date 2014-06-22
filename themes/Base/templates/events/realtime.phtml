@@ -16,7 +16,7 @@ $this->addJS("themes/Base/js/realtimeui.js");
     <?php foreach($occurrences as $occurrence): ?>
       <?php /* @var $occurrence \Eventsd\Models\Occurrence */ ?>
       <tr>
-        <td><?php echo $occurrence->get_api_key() instanceof \Eventsd\Models\ApiKey ? $occurrence->get_api_key()->get_application()->name : 'No API Key'; ?></td>
+        <td><?php echo $occurrence->get_application() instanceof \Eventsd\Models\Application? $occurrence->get_application()->name : 'No Application Set'; ?></td>
         <td><?php echo $occurrence->event; ?></td>
         <td>
           <?php if($occurrence->get_value() == ''): ?>
