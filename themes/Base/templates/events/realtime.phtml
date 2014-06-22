@@ -8,6 +8,7 @@ $this->addJS("themes/Base/js/realtimeui.js");
       <th>Application</th>
       <th>Event</th>
       <th>Value</th>
+      <th>Host</th>
       <th>Time</th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@ $this->addJS("themes/Base/js/realtimeui.js");
             <?php echo $occurrence->get_value(); ?>
           <?php endif; ?>
         </td>
+        <td><?php echo $occurrence->hostname; ?></td>
         <td><?php echo $occurrence->local_time; ?></td>
       </tr>
     <?php endforeach; ?>

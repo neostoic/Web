@@ -9,6 +9,7 @@ jQuery(document).ready(function(){
       "<td>" + data.Application.name + "</td>" +
       "<td>" + data.event + "</td>" +
       "<td>" + data.value + "</td>" +
+      "<td>" + data.hostname + "</td>" +
       "<td>" + data.local_time + "</td>" +
       "</tr>")
     console.log(data);
