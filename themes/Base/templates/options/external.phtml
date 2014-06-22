@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1><?php echo $this->t("My External Accounts", array(':sitename' => $this->getSiteTitle(false))); ?></h1>
+  <div class="row">
+    <?php require("sidebar.phtml"); ?>
+    <div class="col-md-9">
+      <a href="<?php echo $this->url("options/external-accounts/new"); ?>" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Add External Account</a>
+      <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+          <th>Operator</th>
+          <th>Username/ID</th>
+          <th>Input Sync</th>
+          <th>Output Sync</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+          <?php foreach($accounts as $account): ?>
+            <tr>
+              <td><?=$account->get_type()->name; ?></td>
+              <td><?=$account->get_email(); ?> (<?=$account->get_firstname() . "&nbsp;" . $account->get_lastname(); ?>)</td>
+              <td>--</td>
+              <td>--</td>
+              <td>
+                <a href="<?=$this->url("options/external-accounts/remove/{$account->external_account_id}"); ?>" class="btn btn-danger">Remove</a>
+                <a href="<?=$this->url("options/external-accounts/{$account->external_account_id}/inventory/run"); ?>" class="btn btn-warning">Run Inventory</a>
+                <a href="<?=$this->url("options/external-accounts/{$account->external_account_id}/inventory/list"); ?>" class="btn btn-info">Show Inventory</a>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
