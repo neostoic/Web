@@ -1,0 +1,41 @@
+{
+    "name": "eventsd/web",
+    "authors": [
+        {
+            "name": "Matthew Baggett",
+            "email": "matthew@baggett.me"
+        }
+    ],
+    "repositories": [
+        {
+            "url": "https://github.com/FourOneOne/ActiveRecord.git",
+            "type": "git"
+        },
+        {
+            "url": "https://github.com/eventsd/libeventsd.git",
+            "type": "git"
+        },
+        {
+            "url": "https://github.com/eventsd/eventsd.git",
+            "type": "git"
+        }
+    ],
+    "require": {
+        "slim/slim": "2.*",
+        "filp/whoops": "1.*",
+        "zeuxisoo/slim-whoops": "dev-master",
+        "fouroneone/activerecord": "dev-composer-compatable",
+        "fouroneone/translation": "dev-master",
+        "fouroneone/session": "dev-master",
+        "swiftmailer/swiftmailer": "5.*",
+        //"endroid/qrcode": "1.*@dev",
+        "guzzlehttp/guzzle": "~4.0",
+        "eventsd/eventsd": "dev-master",
+        "eventsd/service": "dev-master"
+    },
+
+    "autoload": {
+        "psr-4": {"Skeleton\\": "src/"}
+    }
+
+}
