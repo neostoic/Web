@@ -26,6 +26,7 @@ $app->post('/options/webhooks/new', function () use ($app) {
   $webhook->name = $app->request->post('name');
   $webhook->key = \FourOneOne\ActiveRecord\UUID::v4();
   $webhook->user_id = $user->user_id;
+  $webhook->application_id = $app->request->post('application_id');
   $webhook->save();
 
   header('Location: ' . $app->view()->url("/options/webhooks"));

@@ -8,6 +8,7 @@ class ExternalWebhook extends ActiveRecord{
 
   public $external_webhook_id;
   public $user_id;
+  public $application_id;
   public $name;
   public $key;
 
