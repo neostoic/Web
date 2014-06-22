@@ -28,7 +28,7 @@ class Auth{
     $factory->setClientCredentials(FOURSQUARE_ID, FOURSQUARE_SECRET);
     $factory->setEndpointUri('https://api.foursquare.com');
     $factory->useVersion(2);
-    $factory->verifiedOn(new \DateTime());
+    //$factory->verifiedOn(new \DateTime());
     $auth = $factory->getAuthenticationGateway(
       'https://foursquare.com/oauth2/authorize',
       'https://foursquare.com/oauth2/access_token',
