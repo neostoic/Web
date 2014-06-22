@@ -32,7 +32,7 @@ class Auth{
     $auth = $factory->getAuthenticationGateway(
       'https://foursquare.com/oauth2/authorize',
       'https://foursquare.com/oauth2/access_token',
-      'YOUR_REDIRECT_URL'
+      'http://intervent.io/options/external-accounts/connect/foursquare/callback'
     );
 
     return array($client, $redirector, $factory, $auth);
