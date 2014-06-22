@@ -29,7 +29,19 @@ $app->get('/options/external-accounts/connect/foursquare/callback', function () 
   $gateway = $factory->getUsersGateway();
   $user = $gateway->getUser();
 
-  Kint::dump($user);exit;
+  foreach((array)$user as $key => $value){
+    $meta = new ExternalAccountMeta();
+    $meta->created = date("Y-m-d H:i:s");
+    $meta->external_account_id = $account->external_account_id;
+    $meta->key = $key;
+    if(is_object($value) || is_array($value)){
+      $meta->value = json_encode($value);
+      $meta->is_json = 1;
+    }else{
+      $meta->value = $value;
+    }
+    $meta->save();
+  }
   header('Location: ' . $app->view()->url("/options/external-accounts"));
   exit;
 });
