@@ -1,11 +1,7 @@
 jQuery(document).ready(function(){
-  console.log("Document ready");
-  var conn = new WebSocket('ws://127.0.0.1:8080');
-  conn.onopen = function(e) {
-    console.log("Connection established!");
-  };
 
-  conn.onmessage = function(e) {
-    console.log(e.data);
-  };
+  var socket = io.connect('http://eventsd.local:6948',{'flash policy port':6948});
+  socket.on('event', function (data) {
+    console.log(data);
+  });
 });

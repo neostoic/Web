@@ -33,7 +33,7 @@
         "raveren/kint": "dev-master",
         "eventsd/eventsd": "dev-master",
         "eventsd/service": "dev-master",
-        "cboden/ratchet": "0.3.*"
+        "wisembly/elephant.io": "dev-master"
     },
 
     "autoload": {
