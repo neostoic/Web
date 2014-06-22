@@ -33,7 +33,8 @@
         "raveren/kint": "dev-master",
         "eventsd/eventsd": "dev-master",
         "eventsd/service": "dev-master",
-        "wisembly/elephant.io": "dev-master"
+        "wisembly/elephant.io": "dev-master",
+        "google/apiclient": "1.0.*@dev"
     },
 
     "autoload": {

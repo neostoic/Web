@@ -22,6 +22,7 @@ use Eventsd\Models\User;
             <ul class="nav navbar-nav navbar-right">
                 <?php if(isset($_SESSION['user']) && $_SESSION['user'] instanceof User): ?>
                   <li><a>Hello, <?php echo $_SESSION['user']->username; ?></a></li>
+                  <li><?php echo $this->l("options", $this->t("Options")); ?></li>
                   <li><?php echo $this->l("logout", $this->t("Logout")); ?></li>
                 <?php else: ?>
                   <li class="active"><?php echo $this->l("login", $this->t("Login")); ?></li>
