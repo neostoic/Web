@@ -5,6 +5,7 @@ require_once("vendor/eventsd/eventsd/Eventsd/Datagram.php");
 require_once("vendor/eventsd/eventsd/Eventsd/DatagramHydrationException.php");
 require_once("vendor/eventsd/eventsd/Eventsd/DatagramSizeException.php");
 require_once("vendor/eventsd/eventsd/Eventsd/Eventsd.php");
+require_once("vendor/fouroneone/activerecord/FourOneOne/ActiveRecord/UUID.php");
 
 \Eventsd\Eventsd::configure(array(
   'Server' => 'localhost',
@@ -13,7 +14,7 @@ require_once("vendor/eventsd/eventsd/Eventsd/Eventsd.php");
 ));
 
 $delay = microtime(true) - $start;
-\Eventsd\Eventsd::trigger("loadtest", json_encode(array('url'=>$_SERVER['REQUEST_URI'], 'delay' => $delay)));
+\Eventsd\Eventsd::trigger("loadtest", json_encode(array('uuid' => \FourOneOne\ActiveRecord\UUID::v4(), 'url'=>$_SERVER['REQUEST_URI'], 'delay' => $delay)));
 
 header("Content-type: text/plain");
 echo "OK.\n";
