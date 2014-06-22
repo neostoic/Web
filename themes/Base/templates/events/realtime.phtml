@@ -1,3 +1,7 @@
+<?php
+$this->addJS("themes/Base/js/realtime.js");
+
+?>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -16,8 +20,8 @@
         <td>
           <?php if($occurrence->get_value() == ''): ?>
             --
-          <?php elseif($occurrence->value_is_json()): ?>
-            <?php Kint::dump(json_decode($occurrence->get_value())); ?>
+          <?php //elseif($occurrence->value_is_json()): ?>
+            <?php //Kint::dump(json_decode($occurrence->get_value())); ?>
           <?php else: ?>
             <?php echo $occurrence->get_value(); ?>
           <?php endif; ?>
