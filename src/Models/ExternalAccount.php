@@ -17,7 +17,7 @@ class ExternalAccount extends ActiveRecord{
   protected $__active_record_class;
 
   public function __post_construct(){
-    $this->__active_record_class = "\\Skeleton\\Models\\" . str_replace(" ", "", $this->get_type()->name) . "ExternalAccount";
+    $this->__active_record_class = "\\EventsdWeb\\Models\\" . str_replace(" ", "", $this->get_type()->name) . "ExternalAccount";
   }
 
   public function __requires_recast(){
