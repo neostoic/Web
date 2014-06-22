@@ -17,6 +17,6 @@ class FoursquareExternalAccount extends ExternalAccount{
   }
 
   public function get_email(){
-    return json_decode($this->get_metas('contact'))->email;
+    return json_decode($this->get_metas('contact')->value)->email;
   }
 }
