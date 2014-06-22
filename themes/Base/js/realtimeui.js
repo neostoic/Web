@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
 
-  var socket = io.connect('http://intervent.io:6948',{'flash policy port':6948});
+  var socket = io.connect('http://intervent.io:6948',{'flash policy port':6948, transport:'polling'});
   socket.on('event', function (data) {
     var table = jQuery('table.events-list');
     var table_body = jQuery('tbody', table);
