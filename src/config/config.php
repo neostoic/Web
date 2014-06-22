@@ -11,7 +11,7 @@ define("SHOW_CUT_MARKS", false);
 
 switch(WEB_HOST){
   default:
-    define("THEME", "NorthCard");
+    define("THEME", "Eventsd");
 }
 
 // Set up error reporting

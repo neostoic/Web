@@ -1,2 +1,2 @@
 <?php
-$app->view()->addCSS(WEB_ROOT . "/themes/GoneIO" . "/css/unity.css");
+$app->view()->addCSS(WEB_ROOT . "/themes/Eventsd" . "/css/unity.css");
