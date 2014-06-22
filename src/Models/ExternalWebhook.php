@@ -1,5 +1,6 @@
 <?php
 namespace EventsdWeb\Models;
+use Eventsd\Models\Application;
 use Eventsd\Models\Occurrence;
 use \FourOneOne\ActiveRecord\ActiveRecord;
 
@@ -11,6 +12,15 @@ class ExternalWebhook extends ActiveRecord{
   public $application_id;
   public $name;
   public $key;
+
+  private $_application;
+
+  public function get_application(){
+    if(!$this->_application){
+      $this->_application = Application::search()->where('application_id', $this->application_id)->execOne();
+    }
+    return $this->_application;
+  }
 
   private function get_event_name(){
     return 'Webhook.'.$this->name;
