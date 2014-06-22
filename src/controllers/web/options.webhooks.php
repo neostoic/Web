@@ -15,7 +15,7 @@ $app->get('/options/webhooks/new', function () use ($app) {
   User::check_logged_in();
   $user = User::get_current();
   $app->render('options/new-webhook.phtml', array(
-    'webhooks' => \EventsdWeb\Models\ExternalWebhook::search()->where('user_id', $user->user_id)->exec(),
+    'applications' => \Eventsd\Models\Application::search()->where('user_id', $user->user_id)->exec(),
   ));
 });
 
