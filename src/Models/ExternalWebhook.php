@@ -44,6 +44,7 @@ class ExternalWebhook extends ActiveRecord{
     $occ->local_time = date("Y-m-d H:i:s");
     $occ->remote_time = date("Y-m-d H:i:s");
     $occ->save();
+    $occ->push();
   }
 }
 
