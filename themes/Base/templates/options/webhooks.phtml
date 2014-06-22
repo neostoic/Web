@@ -8,6 +8,7 @@
         <thead>
         <tr>
           <th>Webhook name</th>
+          <th>Application</th>
           <th>URL</th>
           <th>Last Triggered</th>
           <th>Actions</th>
@@ -15,9 +16,10 @@
         </thead>
         <tbody>
           <?php foreach($webhooks as $webhook): ?>
-            <?php /* @var $webook \EventsdWeb\Models\ExternalWebhook */ ?>
+            <?php /* @var $webhook \EventsdWeb\Models\ExternalWebhook */ ?>
             <tr>
               <td><?php echo $webhook->name; ?></td>
+              <td><?php echo $webhook->get_application() instanceof \Eventsd\Models\Application?$webhook->get_application()->name:'--'; ?></td>
               <td>http://intervent.io/webhook/<?php echo $webhook->key; ?></td>
               <td><?php echo $webhook->get_last_event() instanceof \Eventsd\Models\Occurrence?$webhook->get_last_event()->local_time:'Never Triggered';?></td>
               <td>
