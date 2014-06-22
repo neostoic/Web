@@ -20,7 +20,7 @@ ini_set('display_errors', '1');
 
 // Database Settings
 switch(gethostname()){
-  case 'qacha':
+  case 'qacha.thru.io':
     $database = new \FourOneOne\ActiveRecord\DatabaseLayer(array(
       'db_type'     => 'Mysql',
       //'db_hostname' => 'quentin.vpn.thru.io',
