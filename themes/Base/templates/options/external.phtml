@@ -22,9 +22,7 @@
               <td>--</td>
               <td>--</td>
               <td>
-                <a href="<?=$this->url("options/external-accounts/remove/{$account->external_account_id}"); ?>" class="btn btn-danger">Remove</a>
-                <a href="<?=$this->url("options/external-accounts/{$account->external_account_id}/inventory/run"); ?>" class="btn btn-warning">Run Inventory</a>
-                <a href="<?=$this->url("options/external-accounts/{$account->external_account_id}/inventory/list"); ?>" class="btn btn-info">Show Inventory</a>
+                <a href="<?=$this->url("options/external-accounts/remove/{$account->external_account_id}"); ?>" class="btn btn-danger btn-sm">Remove</a>
               </td>
             </tr>
           <?php endforeach; ?>
