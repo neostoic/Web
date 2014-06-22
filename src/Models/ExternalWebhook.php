@@ -35,6 +35,7 @@ class ExternalWebhook extends ActiveRecord{
 
   public function trigger($value, $remote_ip = null){
     $occ = new Occurrence();
+    $occ->application_id = $this->application_id;
     $occ->user_id = $this->user_id;
     $occ->event = $this->get_event_name();
     $occ->value = json_encode($value);
