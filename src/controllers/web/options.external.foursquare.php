@@ -11,7 +11,7 @@ $app->get('/options/external-accounts/connect/foursquare', function () use ($app
   exit;
 });
 
-$app->get('/options/external-accounts/connect/google-drive/callback', function () use ($app) {
+$app->get('/options/external-accounts/connect/foursquare/callback', function () use ($app) {
   $gClient = Auth::get_google_auth();
   $gClient->authenticate($app->request()->get('code'));
 
@@ -41,4 +41,7 @@ $app->get('/options/external-accounts/connect/google-drive/callback', function (
   }
   header('Location: ' . $app->view()->url("/options/external-accounts"));
   exit;
+});
+
+$app->get('/push/foursquare', function () use ($app) {
 });

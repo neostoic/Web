@@ -6,7 +6,7 @@ define("APP_DISK_ROOT", WEB_DISK_ROOT);
 define("APP_ROOT",      APP_DISK_ROOT);
 define("WEB_IS_SSL",    $_SERVER['SERVER_PORT']==443?true:false);
 define("WEB_ROOT",      (WEB_IS_SSL?"https":"http") . "://" . $_SERVER['SERVER_NAME'] . rtrim(dirname($_SERVER['SCRIPT_NAME']),"/") . "/");
-define("APP_NAME",      "Eventsd");
+define("APP_NAME",      "Intervent.io");
 define("SHOW_CUT_MARKS", false);
 
 switch(WEB_HOST){
