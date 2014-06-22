@@ -20,6 +20,17 @@ ini_set('display_errors', '1');
 
 // Database Settings
 switch(gethostname()){
+  case 'qacha':
+    $database = new \FourOneOne\ActiveRecord\DatabaseLayer(array(
+      'db_type'     => 'Mysql',
+      //'db_hostname' => 'quentin.vpn.thru.io',
+      'db_hostname' => '127.0.0.1',
+      'db_port'     => '3306',
+      'db_username' => 'events',
+      'db_password' => 'SHF347GCZrcZfqZf',
+      'db_database' => 'events'
+    ));
+    break;
   default:
     $database = new \FourOneOne\ActiveRecord\DatabaseLayer(array(
       'db_type'     => 'Mysql',
@@ -34,7 +45,7 @@ switch(gethostname()){
 
 define('EVENTSD_BIND', '0.0.0.0');
 define('EVENTSD_PORT', '3465');
-define('EVENTSD_PUBLIC_HOST', 'localhost');
+define('EVENTSD_PUBLIC_HOST', 'intervent.io');
 
 // PHP Settings
 error_reporting(E_ALL);
