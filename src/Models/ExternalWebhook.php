@@ -34,15 +34,15 @@ class ExternalWebhook extends ActiveRecord{
   }
 
   public function trigger($value, $remote_ip = null){
-    $occ = new Occurrence();
-    $occ->application_id = $this->application_id;
-    $occ->user_id = $this->user_id;
-    $occ->event = $this->get_event_name();
-    $occ->value = json_encode($value);
-    $occ->hostname = gethostname();
-    $occ->remote_ip = $remote_ip;
-    $occ->local_time = date("Y-m-d H:i:s");
-    $occ->remote_time = date("Y-m-d H:i:s");
+    $occ                  = new Occurrence();
+    $occ->application_id  = $this->application_id;
+    $occ->user_id         = $this->user_id;
+    $occ->event           = $this->get_event_name();
+    $occ->value           = json_encode($value);
+    $occ->hostname        = gethostname();
+    $occ->remote_ip       = $remote_ip;
+    $occ->local_time      = date("Y-m-d H:i:s");
+    $occ->remote_time     = date("Y-m-d H:i:s");
     $occ->save();
 
     // Finally, post it through to the frontend pusher.
