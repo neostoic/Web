@@ -31,6 +31,18 @@ switch(gethostname()){
       'db_database' => 'events'
     ));
     break;
+  case 'intervent.io':
+  case 'intervent':
+    $database = new \FourOneOne\ActiveRecord\DatabaseLayer(array(
+      'db_type'     => 'Mysql',
+      //'db_hostname' => 'quentin.vpn.thru.io',
+      'db_hostname' => '127.0.0.1',
+      'db_port'     => '3306',
+      'db_username' => 'intervent',
+      'db_password' => 'BpUrSSX45T7uwjvC',
+      'db_database' => 'intervent'
+    ));
+    break;
   default:
     $database = new \FourOneOne\ActiveRecord\DatabaseLayer(array(
       'db_type'     => 'Mysql',
