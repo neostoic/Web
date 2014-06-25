@@ -2,6 +2,7 @@
 namespace EventsdWeb\Models;
 use Eventsd\Models\Application;
 use Eventsd\Models\Occurrence;
+use Eventsd\Eventsd;
 use \FourOneOne\ActiveRecord\ActiveRecord;
 
 class FoursquareVenue extends ActiveRecord{
@@ -17,6 +18,11 @@ class FoursquareVenue extends ActiveRecord{
   public $state;
   public $country;
 
+  public function trigger_event(){
+    $this->event_time = date("Y-m-d H:i:s");
+    Eventsd::trigger('foursquare.new_venue', $this->__toJson());
+    $this->save();
+  }
 
 }
 

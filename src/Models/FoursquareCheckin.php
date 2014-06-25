@@ -14,7 +14,9 @@ class FoursquareCheckin extends ActiveRecord{
   public $type;
   public $timezone_offset;
   public $foursquare_venue_id;
+  public $foursquare_user_id;
   public $source;
+  public $sticker;
   public $event_time;
 
   public function trigger_event(){
