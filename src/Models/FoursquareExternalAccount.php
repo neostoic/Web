@@ -33,16 +33,14 @@ class FoursquareExternalAccount extends ExternalAccount{
     $factory->setToken($this->token);
     $checkin_gateway = $factory->getCheckinsGateway();
     $users_gateway = $factory->getUsersGateway();
-    $generic_gateway = $factory->getGenericGateway();
 
-    $checkins = $checkin_gateway->getRecent(array('limit' => 250));
+    $checkins     = $checkin_gateway->getRecent(array('limit' => 250))->recent;
     $badges       = $users_gateway->getBadges(array('limit' => 250));
     $mayorships   = $users_gateway->getMayorships(array('limit' => 250));
     $friends      = $users_gateway->getFriends();
 
-
     \Kint::dump($checkins, $badges, $mayorships, $friends);
-exit;
+
     $this->__handle_checkins($checkins);
     // TODO: Handle Badges
     // TODO: Handle Mayorships
@@ -55,6 +53,12 @@ exit;
        * @var $oVenue FoursquareVenue
        * @var $oCheckin FoursquareCheckin
        */
+
+      // Sometimes we get shit from Instagram...
+      if(!isset($checkin->venue)){
+        continue;
+      }
+
       $oVenue = FoursquareVenue::search()->where('id', $checkin->venue->id)->execOne();
 
       if(!$oVenue instanceof FoursquareVenue){
@@ -76,8 +80,8 @@ exit;
       if(!$oUser instanceof FoursquareUser){
         $oUser = new FoursquareUser();
         $oUser->id            = $checkin->user->id;
-        $oUser->first_name    = $checkin->user->firstName;
-        $oUser->last_name     = $checkin->user->lastName;
+        $oUser->first_name    = isset($checkin->user->firstName)?$checkin->user->firstName:null;
+        $oUser->last_name     = isset($checkin->user->lastName)?$checkin->user->lastName:null;
         $oUser->gender        = $checkin->user->gender;
         $oUser->relationship  = $checkin->user->relationship;
         $oUser->photo         = $checkin->user->photo->prefix . $checkin->user->photo->suffix;
@@ -95,7 +99,8 @@ exit;
         $oCheckin->foursquare_venue_id = $oVenue->foursquare_venue_id;
         $oCheckin->foursquare_user_id = $oUser->foursquare_user_id;
         $oCheckin->source = $checkin->source->name;
-        $oCheckin->sticker = isset($checkin->sticker)?$checkin->sticker:null;
+        $oCheckin->sticker = isset($checkin->sticker)?$checkin->sticker->image->prefix . $checkin->sticker->image->name:null;
+        //\Kint::dump($oCheckin);exit;
         $oCheckin->save();
         $oCheckin->trigger_event();
       }
