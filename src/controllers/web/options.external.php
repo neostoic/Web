@@ -60,3 +60,13 @@ $app->get('/options/external-accounts/:account_id/inventory/list', function ($ac
   $app->render('options/external.inventory.phtml', array(
   ));
 });
+
+$app->get('/options/external-accounts/check-for-events/:account_id/', function ($account_id) use ($app) {
+  User::check_logged_in();
+  $external_account= ExternalAccount::search()
+    ->where('external_account_id', $account_id)
+    ->where('user_id', User::get_current()->user_id)
+    ->execOne();
+  $external_account->check_for_events();
+  exit;
+});
