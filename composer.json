@@ -35,7 +35,8 @@
         "eventsd/service": "dev-master",
         "wisembly/elephant.io": "dev-master",
         "google/apiclient": "1.0.*@dev",
-        "thetwelvelabs/foursquare": "dev-master"
+        "thetwelvelabs/foursquare": "dev-master",
+        "sinergi/gearman": "dev-master"
     },
 
     "autoload": {

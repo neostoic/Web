@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6c6a05363b4d0ef2a02f389d2c991139",
+    "hash": "6e357b74565f442ff0950423110eed31",
     "packages": [
         {
             "name": "endroid/qrcode",
@@ -62,7 +62,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eventsd/libeventsd.git",
-                "reference": "9b735462402e993f970ee7802a7ddf2d21bd0753"
+                "reference": "1293cf6e8c8da9447dba880e936e599325e16652"
             },
             "type": "library",
             "autoload": {
@@ -77,7 +77,7 @@
                 }
             ],
             "description": "Eventsd library",
-            "time": "2014-06-20 02:40:19"
+            "time": "2014-06-22 19:59:07"
         },
         {
             "name": "eventsd/service",
@@ -85,7 +85,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eventsd/eventsd.git",
-                "reference": "8aa512834b1a563fdf5e926dfabf43ca78ca961e"
+                "reference": "e0c2c11f08276730d60b721e36902c3b71e0a9c2"
             },
             "require": {
                 "eventsd/eventsd": "dev-master",
@@ -103,7 +103,7 @@
                     "email": "matthew@baggett.me"
                 }
             ],
-            "time": "2014-06-22 18:32:48"
+            "time": "2014-06-22 23:13:00"
         },
         {
             "name": "filp/whoops",
@@ -170,7 +170,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FourOneOne/ActiveRecord.git",
-                "reference": "c9f822b5fab987b1693da540a6bf02709a5eb011"
+                "reference": "c282c1e7d46d55a5c426df60776c7e2711cf79b0"
             },
             "type": "library",
             "autoload": {
@@ -185,7 +185,7 @@
                 }
             ],
             "description": "An active-record like implementation",
-            "time": "2014-06-16 22:08:36"
+            "time": "2014-06-22 22:50:51"
         },
         {
             "name": "fouroneone/session",
@@ -416,6 +416,44 @@
             "time": "2014-04-03 04:48:24"
         },
         {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
+        },
+        {
             "name": "raveren/kint",
             "version": "dev-master",
             "source": {
@@ -460,6 +498,107 @@
                 "php"
             ],
             "time": "2014-03-20 13:38:44"
+        },
+        {
+            "name": "react/event-loop",
+            "version": "v0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/event-loop.git",
+                "reference": "18c5297087ca01de85518e2b55078f444144aa1b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/18c5297087ca01de85518e2b55078f444144aa1b",
+                "reference": "18c5297087ca01de85518e2b55078f444144aa1b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "suggest": {
+                "ext-event": "~1.0",
+                "ext-libev": "*",
+                "ext-libevent": ">=0.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "React\\EventLoop\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Event loop abstraction layer that libraries can use for evented I/O.",
+            "keywords": [
+                "event-loop"
+            ],
+            "time": "2014-02-26 17:36:58"
+        },
+        {
+            "name": "sinergi/gearman",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sinergi/gearman.git",
+                "reference": "ee9ddccdd9ba7107bb578f1476423ab861b3a0b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sinergi/gearman/zipball/ee9ddccdd9ba7107bb578f1476423ab861b3a0b4",
+                "reference": "ee9ddccdd9ba7107bb578f1476423ab861b3a0b4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/log": "~1",
+                "react/event-loop": "0.4.*",
+                "symfony/console": "2.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4"
+            },
+            "suggest": {
+                "ext-gearman": "This library needs Gearman"
+            },
+            "bin": [
+                "bin/gearman",
+                "bin/gearman.php"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sinergi\\Gearman\\": "src/Gearman"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gabriel Bull",
+                    "email": "me@gabrielbull.com",
+                    "homepage": "http://gabrielbull.com/"
+                }
+            ],
+            "description": "PHP library for dispatching, handling and managing Gearman Workers",
+            "homepage": "https://github.com/sinergi/gearman",
+            "keywords": [
+                "Tasks",
+                "daemon",
+                "gearman",
+                "jobs",
+                "workers"
+            ],
+            "time": "2014-06-22 13:43:47"
         },
         {
             "name": "slim/slim",
@@ -560,6 +699,63 @@
                 "mailer"
             ],
             "time": "2014-06-13 11:44:54"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v2.5.0",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console.git",
+                "reference": "ef4ca73b0b3a10cbac653d3ca482d0cdd4502b2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/ef4ca73b0b3a10cbac653d3ca482d0cdd4502b2c",
+                "reference": "ef4ca73b0b3a10cbac653d3ca482d0cdd4502b2c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-05-22 08:54:24"
         },
         {
             "name": "thetwelvelabs/foursquare",
@@ -722,7 +918,8 @@
         "eventsd/service": 20,
         "wisembly/elephant.io": 20,
         "google/apiclient": 20,
-        "thetwelvelabs/foursquare": 20
+        "thetwelvelabs/foursquare": 20,
+        "sinergi/gearman": 20
     },
     "platform": [
 

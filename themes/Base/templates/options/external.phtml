@@ -22,6 +22,9 @@
               <td>--</td>
               <td>--</td>
               <td>
+                <?php if(method_exists($account, 'check_for_events')): ?>
+                  <a href="<?=$this->url("options/external-accounts/check-for-events/{$account->external_account_id}"); ?>" class="btn btn-primary btn-sm">Check Events</a>
+                <?php endif; ?>
                 <a href="<?=$this->url("options/external-accounts/remove/{$account->external_account_id}"); ?>" class="btn btn-danger btn-sm">Remove</a>
               </td>
             </tr>
