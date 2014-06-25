@@ -21,6 +21,10 @@ class Auth{
     return $gClient;
   }
 
+
+  /**
+   * @return array
+   */
   static public function get_foursquare_auth(){
     $client = new \TheTwelve\Foursquare\HttpClient\CurlHttpClient();
     $redirector = new \TheTwelve\Foursquare\Redirector\HeaderRedirector();

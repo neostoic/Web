@@ -21,4 +21,20 @@ class FoursquareExternalAccount extends ExternalAccount{
     $deserialise = json_decode($contact->value);
     return $deserialise->email;
   }
+
+  public function check_for_events(){
+    /**
+     * @var $client \TheTwelve\Foursquare\HttpClient\CurlHttpClient
+     * @var $redirector \TheTwelve\Foursquare\Redirector\HeaderRedirector
+     * @var $factory \TheTwelve\Foursquare\ApiGatewayFactory
+     * @var $auth \TheTwelve\Foursquare\AuthenticationGateway
+     */
+    list($client, $redirector, $factory, $auth) = Auth::get_foursquare_auth();
+    $factory->setToken($this->token);
+    $checkin_gateway = $factory->getCheckinsGateway();
+    $checkins = $checkin_gateway->getCheckins();
+    $badges = $checkin_gateway->getBadges();
+    $mayorships = $checkin_gateway->getMayorships();
+    Kint::dump($checkins, $badges, $mayorships);
+  }
 }
