@@ -58,6 +58,9 @@ switch(gethostname()){
 define('EVENTSD_BIND', '0.0.0.0');
 define('EVENTSD_PORT', '3465');
 define('EVENTSD_PUBLIC_HOST', 'intervent.io');
+if(isset($_SERVER['SERVER_NAME'])){
+  define('EVENTSD_SELF_HOST', $_SERVER['SERVER_NAME']);
+}
 
 // PHP Settings
 error_reporting(E_ALL);
@@ -75,7 +78,7 @@ $mailer_from = array("system@example.com" => "Example");
 $mailer_default_to = array("you@example.com");
 
 \Eventsd\Eventsd::configure(array(
-  'Server' => EVENTSD_PUBLIC_HOST,
+  'Server' => EVENTSD_SELF_HOST,
   'Port' => EVENTSD_PORT,
   'Key' => 'fe451eb5-6c97-491e-9a66-23c7b4d528aa',
 ));

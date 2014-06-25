@@ -17,5 +17,6 @@ class FoursquareVenue extends ActiveRecord{
   public $state;
   public $country;
 
+
 }
 

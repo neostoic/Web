@@ -46,12 +46,12 @@ class FoursquareExternalAccount extends ExternalAccount{
         $oVenue = new FoursquareVenue();
         $oVenue->id         = $checkin->venue->id;
         $oVenue->name       = $checkin->venue->name;
-        $oVenue->latitude   = $checkin->venue->location->lat;
-        $oVenue->longitude  = $checkin->venue->location->lng;
-        $oVenue->cc         = $checkin->venue->location->cc;
-        $oVenue->city       = $checkin->venue->location->city;
-        $oVenue->state      = $checkin->venue->location->state;
-        $oVenue->country    = $checkin->venue->location->country;
+        $oVenue->latitude   = isset($checkin->venue->location->lat)?$checkin->venue->location->lat:null;
+        $oVenue->longitude  = isset($checkin->venue->location->lng)?$checkin->venue->location->lng:null;
+        $oVenue->cc         = isset($checkin->venue->location->cc)?$checkin->venue->location->cc:null;
+        $oVenue->city       = isset($checkin->venue->location->city)?$checkin->venue->location->city:null;
+        $oVenue->state      = isset($checkin->venue->location->state)?$checkin->venue->location->state:null;
+        $oVenue->country    = isset($checkin->venue->location->country)?$checkin->venue->location->country:null;
         $oVenue->save();
       }
       $oCheckin = FoursquareCheckin::search()->where('id', $checkin->id)->execOne();
@@ -64,6 +64,7 @@ class FoursquareExternalAccount extends ExternalAccount{
         $oCheckin->foursquare_venue_id = $oVenue->foursquare_venue_id;
         $oCheckin->source = $checkin->source->name;
         $oCheckin->save();
+        $oCheckin->trigger_event();
       }
     }
     \Kint::dump($checkins, $badges, $mayorships);

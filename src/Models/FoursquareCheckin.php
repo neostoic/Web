@@ -1,5 +1,6 @@
 <?php
 namespace EventsdWeb\Models;
+use Eventsd\Eventsd;
 use Eventsd\Models\Application;
 use Eventsd\Models\Occurrence;
 use \FourOneOne\ActiveRecord\ActiveRecord;
@@ -13,8 +14,14 @@ class FoursquareCheckin extends ActiveRecord{
   public $type;
   public $timezone_offset;
   public $foursquare_venue_id;
-  public $event_time;
   public $source;
+  public $event_time;
+
+  public function trigger_event(){
+    $this->event_time = date("Y-m-d H:i:s");
+    Eventsd::trigger('foursquare.checkin', $this->__toJson());
+    $this->save();
+  }
 
 }
 
