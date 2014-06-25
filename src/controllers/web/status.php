@@ -1,8 +1,6 @@
 <?php
-use Eventsd\Models\User;
 
 $app->get('/status', function () use ($app) {
-  User::check_logged_in();
 
   exec("ps auxwww|grep eventsd.daemon.php|grep -v grep", $udp);
   exec("ps auxwww|grep realtime.js|grep -v grep", $nodejs);
