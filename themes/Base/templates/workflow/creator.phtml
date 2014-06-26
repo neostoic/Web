@@ -1,0 +1,22 @@
+<?php Kint::dump($events); ?>
+
+<div class="col-md-12">
+  <div class="col-md-10">
+    <h3>Events</h3>
+    <ul>
+      <?php foreach($events as $event): ?>
+        <?php /* @var $event \Eventsd\Models\Occurrence */ ?>
+        <li>
+          <div class="event">
+            <div class="name"><?php echo $event->event; ?></div>
+            <ul>
+              <?php foreach($event->get_properties() as $property): ?>
+                <li><?php echo $property; ?></li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+</div>

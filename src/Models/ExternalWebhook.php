@@ -23,7 +23,7 @@ class ExternalWebhook extends ActiveRecord{
   }
 
   private function get_event_name(){
-    return 'Webhook.'.$this->name;
+    return strtolower('webhook.'.str_replace(" ","-", $this->name));
   }
 
   /**

@@ -5,20 +5,20 @@ $this->addJS("themes/Base/js/realtimeui.js");
 <table class="table table-striped events-list">
   <thead>
     <tr>
-      <th>Application</th>
-      <th>Event</th>
-      <th>Value</th>
-      <th>Host</th>
-      <th>Time</th>
+      <th class="application">Application</th>
+      <th class="event">Event</th>
+      <th class="value">Value</th>
+      <th class="host">Host</th>
+      <th class="time">Time</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach($occurrences as $occurrence): ?>
       <?php /* @var $occurrence \Eventsd\Models\Occurrence */ ?>
       <tr>
-        <td><?php echo $occurrence->get_application() instanceof \Eventsd\Models\Application? $occurrence->get_application()->name : 'No Application Set'; ?></td>
-        <td><?php echo $occurrence->event; ?></td>
-        <td>
+        <td class="application"><?php echo $occurrence->get_application() instanceof \Eventsd\Models\Application? $occurrence->get_application()->name : 'No Application Set'; ?></td>
+        <td class="event"><?php echo $occurrence->event; ?></td>
+        <td class="value">
           <?php if($occurrence->get_value() == ''): ?>
             --
           <?php //elseif($occurrence->value_is_json()): ?>
@@ -27,8 +27,8 @@ $this->addJS("themes/Base/js/realtimeui.js");
             <?php echo $occurrence->get_value(); ?>
           <?php endif; ?>
         </td>
-        <td><?php echo $occurrence->hostname; ?></td>
-        <td><?php echo $occurrence->local_time; ?></td>
+        <td class="host"><?php echo $occurrence->hostname; ?></td>
+        <td class="time"><?php echo $occurrence->local_time; ?></td>
       </tr>
     <?php endforeach; ?>
   </tbody>

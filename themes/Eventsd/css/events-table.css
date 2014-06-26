@@ -1,3 +1,6 @@
 table.table.events-list{
     font-size: 80%;
 }
+table.table.events-list .application{
+    width: 100px;
+}
