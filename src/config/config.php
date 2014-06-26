@@ -6,19 +6,13 @@ if(php_sapi_name() != 'cli'){
   define("WEB_DISK_ROOT", dirname($_SERVER['SCRIPT_FILENAME']));
   define("WEB_IS_SSL",    $_SERVER['SERVER_PORT']==443?true:false);
   define("WEB_ROOT",      (WEB_IS_SSL?"https":"http") . "://" . $_SERVER['SERVER_NAME'] . rtrim(dirname($_SERVER['SCRIPT_NAME']),"/") . "/");
+  switch(WEB_HOST){
+    default:
+      define("THEME", "Eventsd");
+  }
 }
-var_dump($_SERVER):
-define("APP_ROOT",      dirname($_SERVER["SCRIPT_FILENAME"]));
+define("APP_ROOT",      defined('WEB_DISK_ROOT')?WEB_DISK_ROOT:dirname($_SERVER["PWD"]));
 define("APP_DISK_ROOT", APP_ROOT);
-
-
-var_dump(APP_ROOT); exit;
-
-
-switch(WEB_HOST){
-  default:
-    define("THEME", "Eventsd");
-}
 
 // Set up error reporting
 error_reporting(E_ALL);

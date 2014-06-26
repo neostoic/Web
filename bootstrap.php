@@ -15,10 +15,11 @@ require_once("./src/config/google.php");
 require_once("./src/lib/mail.php");
 
 // Decide if we're the API version or the Web version
-if(substr($_SERVER['SERVER_NAME'], 0, 4) == 'api.'){
-  $mode = 'api';
-}else{
-  $mode = "web";
+if(php_sapi_name() != 'cli'){
+  if(substr($_SERVER['SERVER_NAME'], 0, 4) == 'api.'){
+    $mode = 'api';
+  }else{
+    $mode = "web";
+  }
 }
-
 
