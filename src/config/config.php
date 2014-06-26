@@ -7,8 +7,9 @@ if(php_sapi_name() != 'cli'){
   define("WEB_IS_SSL",    $_SERVER['SERVER_PORT']==443?true:false);
   define("WEB_ROOT",      (WEB_IS_SSL?"https":"http") . "://" . $_SERVER['SERVER_NAME'] . rtrim(dirname($_SERVER['SCRIPT_NAME']),"/") . "/");
 }
-define("APP_DISK_ROOT", WEB_DISK_ROOT);
+var_dump($_SERVER):
 define("APP_ROOT",      dirname($_SERVER["SCRIPT_FILENAME"]));
+define("APP_DISK_ROOT", APP_ROOT);
 
 
 var_dump(APP_ROOT); exit;
