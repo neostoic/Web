@@ -11,7 +11,6 @@ jQuery(document).ready(function(){
     });
   }, 300);
 
-
   properties.hover(function(){
     jQuery(this).addClass('hover');
   }, function(){

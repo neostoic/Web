@@ -1,4 +1,9 @@
 <?php
+$app->get('/workflow/list', function () use ($app) {
+  $app->render('workflow/list.phtml', array(
+    'workflows' => null
+  ));
+});
 
 $app->get('/workflow/create', function () use ($app) {
 
