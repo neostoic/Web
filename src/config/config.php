@@ -1,13 +1,18 @@
 <?php
 define("TIME_STARTUP",  microtime(true));
-define("WEB_HOST",      $_SERVER['HTTP_HOST']);
-define("WEB_DISK_ROOT", dirname($_SERVER['SCRIPT_FILENAME']));
-define("APP_DISK_ROOT", WEB_DISK_ROOT);
-define("APP_ROOT",      APP_DISK_ROOT);
-define("WEB_IS_SSL",    $_SERVER['SERVER_PORT']==443?true:false);
-define("WEB_ROOT",      (WEB_IS_SSL?"https":"http") . "://" . $_SERVER['SERVER_NAME'] . rtrim(dirname($_SERVER['SCRIPT_NAME']),"/") . "/");
 define("APP_NAME",      "Intervent.io");
-define("SHOW_CUT_MARKS", false);
+if(php_sapi_name() != 'cli'){
+  define("WEB_HOST",      $_SERVER['HTTP_HOST']);
+  define("WEB_DISK_ROOT", dirname($_SERVER['SCRIPT_FILENAME']));
+  define("WEB_IS_SSL",    $_SERVER['SERVER_PORT']==443?true:false);
+  define("WEB_ROOT",      (WEB_IS_SSL?"https":"http") . "://" . $_SERVER['SERVER_NAME'] . rtrim(dirname($_SERVER['SCRIPT_NAME']),"/") . "/");
+}
+define("APP_DISK_ROOT", WEB_DISK_ROOT);
+define("APP_ROOT",      dirname($_SERVER["SCRIPT_FILENAME"]);
+
+
+var_dump(APP_ROOT); exit;
+
 
 switch(WEB_HOST){
   default:
@@ -60,6 +65,8 @@ define('EVENTSD_PORT', '3465');
 define('EVENTSD_PUBLIC_HOST', 'intervent.io');
 if(isset($_SERVER['SERVER_NAME'])){
   define('EVENTSD_SELF_HOST', $_SERVER['SERVER_NAME']);
+}else{
+  define('EVENTSD_SELF_HOST', '127.0.0.1');
 }
 
 // PHP Settings
