@@ -8,12 +8,22 @@ class GooglePlusExternalAccount extends ExternalAccount{
     return false;
   }
 
-  public function inventory(){
-    ini_set('memory_limit', '512M');
-
+  public function check_for_events(){
     $gClient = Auth::get_google_auth();
     $gClient->setAccessToken($this->token);
     $gPlus = new \Google_Service_Plus($gClient);
+    \Kint::dump($gPlus->people->get('me'));exit;
+  }
 
+  public function get_firstname(){
+    return $this->get_metas('givenName')->value;
+  }
+
+  public function get_lastname(){
+    return $this->get_metas('familyName')->value;
+  }
+
+  public function get_email(){
+    return $this->get_metas('email')->value;
   }
 }

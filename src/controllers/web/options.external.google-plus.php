@@ -20,6 +20,7 @@ $app->get('/options/external-accounts/connect/google-plus/callback', function ()
   $external_account_type = ExternalAccountType::search()->where('name', "Google Plus")->execOne();
   $account->external_account_type_id = $external_account_type->external_account_type_id;
   $account->token = $gClient->getAccessToken();
+  $gClient->setState('offline');
   $account->user_id = User::get_current()->user_id;
   $account->created = date("Y-m-d H:i:s");
   $account->save();
