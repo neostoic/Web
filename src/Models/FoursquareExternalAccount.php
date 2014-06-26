@@ -39,11 +39,10 @@ class FoursquareExternalAccount extends ExternalAccount{
     $mayorships   = $users_gateway->getMayorships(array('limit' => 250));
     $friends      = $users_gateway->getFriends();
 
-    \Kint::dump($checkins, $badges, $mayorships, $friends);
-
     $this->__handle_checkins($checkins);
     // TODO: Handle Badges
     // TODO: Handle Mayorships
+    // TODO: Handle Friends.
 
   }
 

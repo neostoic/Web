@@ -19,6 +19,7 @@ class FoursquareUser extends ActiveRecord{
 
   public function trigger_event(){
     $this->event_time = date("Y-m-d H:i:s");
+    echo " > foursquare.friend_found: New Friend Found\n";
     Eventsd::trigger('foursquare.friend_found', $this->__toJson());
     $this->save();
   }

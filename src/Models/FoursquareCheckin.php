@@ -21,6 +21,7 @@ class FoursquareCheckin extends ActiveRecord{
 
   public function trigger_event(){
     $this->event_time = date("Y-m-d H:i:s");
+    echo " > foursquare.checkin: New Checkin Found\n";
     Eventsd::trigger('foursquare.checkin', $this->__toJson());
     $this->save();
   }

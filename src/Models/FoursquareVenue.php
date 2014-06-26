@@ -20,6 +20,7 @@ class FoursquareVenue extends ActiveRecord{
 
   public function trigger_event(){
     $this->event_time = date("Y-m-d H:i:s");
+    echo " > foursquare.new_venue: New Venue Found\n";
     Eventsd::trigger('foursquare.new_venue', $this->__toJson());
     $this->save();
   }
