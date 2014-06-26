@@ -36,6 +36,8 @@ ul.events li.event .name span{
     -ms-transform:  translateX(-50%) translateY(-50%) rotate(270deg); /* IE 9 */
     -webkit-transform:  translateX(-50%) translateY(-50%) rotate(270deg); /* Opera, Chrome, and Safari */
     transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
+    padding-left: 5px;
+    padding-right: 5px;
 }
 ul.events li.event ul.properties{
     display: block;
