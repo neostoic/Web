@@ -1,0 +1,61 @@
+ul.events{
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+ul.events li.event{
+    display: block;
+    float: left;
+    width: 100%;
+    position: relative;
+    border: 1px solid #dd4814;
+    margin-bottom: 10px;
+    min-height: 70px;
+}
+ul.events li.event .name{
+    display: block;
+    float: left;
+    width: 15%;
+    min-height: 30px;
+    background-color: #dd4814;
+    color: white;
+    margin-right: 1%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+}
+ul.events li.event .name span{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform:  translateX(-50%) translateY(-50%) rotate(270deg); /* IE 9 */
+    -webkit-transform:  translateX(-50%) translateY(-50%) rotate(270deg); /* Opera, Chrome, and Safari */
+    transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+ul.events li.event ul.properties{
+    display: block;
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 85%;
+}
+ul.events li.event ul.properties li{
+    display: block;
+    float: left;
+    width: 100%;
+    font-size: 80%;
+    text-align: right;
+    cursor: pointer;
+    padding-right: 2%
+}
+ul.events li.event ul.properties li.hover{
+    background-color: #E6E6E6;
+}
+ul.events li.event ul.properties li.selected{
+    background-color: #CFCFCF;
+}

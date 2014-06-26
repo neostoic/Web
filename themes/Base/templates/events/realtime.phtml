@@ -18,7 +18,7 @@ $this->addJS("themes/Base/js/realtimeui.js");
       <tr>
         <td class="application"><?php echo $occurrence->get_application() instanceof \Eventsd\Models\Application? $occurrence->get_application()->name : 'No Application Set'; ?></td>
         <td class="event"><?php echo $occurrence->event; ?></td>
-        <td class="value">
+         <td class="value">
           <?php if($occurrence->get_value() == ''): ?>
             --
           <?php //elseif($occurrence->value_is_json()): ?>
