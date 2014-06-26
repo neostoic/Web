@@ -28,6 +28,11 @@ $app->post('/options/external-accounts/connect', function () use ($app) {
     exit;
   }
 
+  if($external_account_type->name == 'Google Plus'){
+    header("Location: " . $app->view()->url("options/external-accounts/connect/google-plus"));
+    exit;
+  }
+
   if($external_account_type->name == 'Foursquare'){
     header("Location: " . $app->view()->url("options/external-accounts/connect/foursquare"));
     exit;
