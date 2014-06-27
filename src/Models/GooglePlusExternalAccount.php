@@ -12,6 +12,7 @@ class GooglePlusExternalAccount extends ExternalAccount{
     $gClient = Auth::get_google_auth();
     $gClient->setAccessToken($this->token);
     $gPlus = new \Google_Service_Plus($gClient);
+    //$gMail = new \Google_Service_Mail // TODO: One day.
     \Kint::dump($gPlus->people->get('me'));exit;
   }
 
