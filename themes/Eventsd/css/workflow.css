@@ -4,20 +4,24 @@ ul.events{
     padding: 0;
     margin: 0;
 }
-ul.events li.event{
+ul.events li.event,
+.gate{
     display: block;
     float: left;
     width: 100%;
     position: relative;
     border: 1px solid #dd4814;
     margin-bottom: 10px;
-    min-height: 70px;
+    min-height: 28px;
+    padding: 1px;
 }
-ul.events li.event .name{
+ul.events li.event .name,
+.gate .name{
     display: block;
     float: left;
     width: 15%;
-    min-height: 30px;
+    max-width: 25px;
+    min-height: 32px;
     background-color: #dd4814;
     color: white;
     margin-right: 1%;
@@ -26,9 +30,9 @@ ul.events li.event .name{
     top: 0;
     left: 0;
     overflow: hidden;
-
 }
-ul.events li.event .name span{
+ul.events li.event .name span,
+.gate .name span{
     display: block;
     position: absolute;
     top: 50%;
@@ -36,15 +40,36 @@ ul.events li.event .name span{
     -ms-transform:  translateX(-50%) translateY(-50%) rotate(270deg); /* IE 9 */
     -webkit-transform:  translateX(-50%) translateY(-50%) rotate(270deg); /* Opera, Chrome, and Safari */
     transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    white-space: nowrap;
 }
-ul.events li.event ul.properties{
+ul.events li.event ul.properties,
+.gate .argument{
     display: block;
     float: right;
     margin: 0;
     padding: 0;
     width: 85%;
+}
+.gate .argument{
+    margin-bottom: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    text-align: right;
+    width: 90%;
+}
+.gate .argument select.operation,
+.gate .argument input.value{
+    border: 1px solid #dd4814;
+    height: 21px;
+}
+
+.gate .argument select.operation{
+    width: 38px;
+}
+.gate .argument input.value{
+    width: 80px;
 }
 ul.events li.event ul.properties li{
     display: block;
@@ -60,4 +85,42 @@ ul.events li.event ul.properties li.hover{
 }
 ul.events li.event ul.properties li.selected{
     background-color: #CFCFCF;
+}
+
+
+
+.workflow-gates{}
+
+.workflow-gates .gate-group-operation,
+.workflow-gates .gate-group-description,
+.workflow-gates ul.gates{
+    display: none;
+    border: 1px solid #dd4814;
+}
+.workflow-gates .gate-group-operation{
+    border-bottom: 0;
+    background-color: #dd4814;
+    color: white;
+    text-align: center;
+}
+.workflow-gates .gate-group-description{
+    border-top: 0;
+    border-bottom: 0;
+    padding-top: 9px;
+    padding-left: 9px;
+    padding-right: 9px;
+    font-size: 80%;
+    color: #666666;
+}
+.workflow-gates ul.gates{
+    border-top: 0;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 9px 9px 0;
+    width: 100%;    
+}
+.workflow-gates ul.gates.hide-box{
+    border: 0;
+    padding: 0;
 }

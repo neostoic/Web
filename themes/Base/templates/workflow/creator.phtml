@@ -1,18 +1,26 @@
 <h1>New Workflow</h1>
 <div class="col-md-12">
-  <div class="col-md-2">
+  <div class="col-md-2 workflow-events">
     <ul class="events">
       <?php foreach($events as $event): ?>
         <?php /* @var $event \Eventsd\Models\Occurrence */ ?>
         <li class="event">
           <div class="name"><span><?php echo $event->event; ?></span></div>
           <ul class="properties">
+            <li>every time</li>
             <?php foreach($event->get_properties() as $property): ?>
               <li><?php echo $property; ?></li>
             <?php endforeach; ?>
           </ul>
         </li>
       <?php endforeach; ?>
+    </ul>
+  </div>
+  <div class="col-md-4 workflow-gates">
+    <div class="gate-group-operation">and</div>
+    <div class="gate-group-description">All of these gates will be AND'd together.</div>
+    <ul class="gates">
+
     </ul>
   </div>
 </div>
