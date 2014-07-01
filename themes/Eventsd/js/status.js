@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-
+    var max_per_second = 20;
     var gaugeOptions = {
 
       chart: {
@@ -56,15 +56,14 @@ jQuery(document).ready(function() {
     };
 
   // The speed gauge
-  jQuery('#rate-container').highcharts(Highcharts.merge(gaugeOptions, {
+  jQuery('#rate-container-second').highcharts(Highcharts.merge(gaugeOptions, {
     yAxis: {
       min: 0,
-      max: 50,
+      max: max_per_second,
       title: {
         text: null
       }
     },
-
     credits: {
       enabled: false
     },
@@ -78,7 +77,35 @@ jQuery(document).ready(function() {
           '<span style="font-size:12px;color:silver">events/sec</span></div>'
       },
       tooltip: {
-        valueSuffix: ' events/sec'
+        valueSuffix: ' events/second'
+      }
+    }]
+
+  }));
+
+  // The speed gauge
+  jQuery('#rate-container-minute').highcharts(Highcharts.merge(gaugeOptions, {
+    yAxis: {
+      min: 0,
+      max: max_per_second*60,
+      title: {
+        text: null
+      }
+    },
+    credits: {
+      enabled: false
+    },
+
+    series: [{
+      name: 'Speed',
+      data: [0],
+      dataLabels: {
+        format: '<div style="text-align:center"><span style="font-size:25px;color:' +
+          ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
+          '<span style="font-size:12px;color:silver">events/min</span></div>'
+      },
+      tooltip: {
+        valueSuffix: ' events/minute'
       }
     }]
 
