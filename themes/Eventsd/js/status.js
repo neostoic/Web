@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-    var max_per_second = 20;
+    var max_per_second = 250;
     var gaugeOptions = {
 
       chart: {

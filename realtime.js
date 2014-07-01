@@ -52,7 +52,7 @@ setInterval(function(){
   io.sockets.emit('events_per_second',
     {
       'second': events_per_second,
-      'minute': events_per_minute,
+      //'minute': events_per_minute,
       'minute_sum': events_per_minute_sum
     }
   );
