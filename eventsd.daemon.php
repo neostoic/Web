@@ -10,7 +10,7 @@ $processID = pcntl_fork();
 if ( $processID == -1 ) {
   echo "\n Error:  The process failed to fork. \n";
 } else if ( $processID ) {
-  die("Forked as $processID\n");
+  die("Intervent UDP Service: Forked as $processID\n");
   exit;
 } else {
 
