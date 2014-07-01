@@ -59,7 +59,7 @@ jQuery(document).ready(function() {
   jQuery('#rate-container').highcharts(Highcharts.merge(gaugeOptions, {
     yAxis: {
       min: 0,
-      max: 200,
+      max: 50,
       title: {
         text: null
       }
@@ -71,7 +71,7 @@ jQuery(document).ready(function() {
 
     series: [{
       name: 'Speed',
-      data: [80],
+      data: [0],
       dataLabels: {
         format: '<div style="text-align:center"><span style="font-size:25px;color:' +
           ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}</span><br/>' +
@@ -83,26 +83,4 @@ jQuery(document).ready(function() {
     }]
 
   }));
-
-
-
-  // Bring life to the dials
-  setInterval(function () {
-    // Speed
-    var chart = jQuery('#rate-container').highcharts();
-    if (chart) {
-      var point = chart.series[0].points[0],
-        newVal,
-        inc = Math.round((Math.random() - 0.5) * 100);
-
-      newVal = point.y + inc;
-      if (newVal < 0 || newVal > 200) {
-        newVal = point.y - inc;
-      }
-
-      point.update(newVal);
-    }
-
-
-  }, 2000);
 });

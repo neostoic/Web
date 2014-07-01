@@ -12,7 +12,7 @@ $app->get('/status', function () use ($app) {
 
   $app->view()->addJS(WEB_ROOT . "/themes/Eventsd" . "/js/status.js");
   $app->view()->addJS(WEB_ROOT . "/themes/Eventsd" . "/highcharts/js/modules/solid-gauge.src.js");
-
+  $app->view()->addJS("themes/Base/js/status.js");
 
   $app->render('status/status.phtml', $status);
 });
