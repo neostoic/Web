@@ -9,7 +9,7 @@ $app->get('/status', function () use ($app) {
 
   $status = array(
     'udp' => (strlen(end($udp)) > 0)?'OKAY':'FAILED',
-    'packet processor' => (strlen(end($pp)) > 0)?'OKAY':'FAILED',
+    'pp' => (strlen(end($pp)) > 0)?'OKAY':'FAILED',
     'nodejs' => (strlen(end($nodejs)) > 0)?'OKAY':'FAILED',
     'redis' => (strlen(end($redis)) > 0)?'OKAY':'FAILED',
   );
