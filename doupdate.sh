@@ -1,5 +1,6 @@
 #!/bin/bash
 cd www;
+git reset --hard HEAD;
 git pull;
 git submodule init;
 git submodule update;
