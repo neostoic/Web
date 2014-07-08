@@ -31,6 +31,8 @@ while(true){
       } else if ($pid) {
         // we are the parent
       } else {
+        sleep(3);
+
         // we are the child
         $buf = $redis->lpop('events_que');
         echo "Buf: {$buf}\n";

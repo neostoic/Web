@@ -1,5 +1,6 @@
 <?php
 
+
 //Set the ticks
 declare(ticks = 1);
 
@@ -14,6 +15,7 @@ if ( $processID == -1 ) {
   exit;
 } else {
 
+  sleep(3);
   if(!file_exists('./vendor/autoload.php')){
     die("You need to run <em>php composer.phar update</em> in the root directory.");
   }
