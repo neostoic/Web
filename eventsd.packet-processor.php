@@ -22,35 +22,20 @@ $redis = new \Predis\Client();
 
 while(true){
   $queue = $redis->llen('events_que');
-  echo "Queue: " . $queue . "\n";
+  echo "\rQueue: {$queue}";
   if($queue > 0){
-    $pid = pcntl_fork();
-    for($i=0; $i < 128; $i++){
-      if ($pid == -1) {
-        die('could not fork');
-      } else if ($pid) {
-        // we are the parent
-      } else {
-        sleep(3);
-
-        // we are the child
-        $buf = $redis->lpop('events_que');
-        echo "Buf: {$buf}\n";
-        if($buf !== null){
-          $json = json_decode($buf);
-          if(!$json){
-            var_dump($buf);
-          }else{
-            echo "Passing to handle_packet: {$buf}\n";
-            Eventsd\PacketProcessor::handle_packet($buf);
-          }
-        }
+    $buf = $redis->lpop('events_que');
+    echo "Buf: {$buf}\n";
+    if($buf !== null){
+      $json = json_decode($buf);
+      if(!$json){
+        var_dump($buf);
+      }else{
+        echo "Passing to handle_packet: {$buf}\n";
+        Eventsd\PacketProcessor::handle_packet($buf);
       }
     }
-  }
-
-
-  if($queue == 0){
+  }else{
     sleep(1);
   }
 }
