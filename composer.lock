@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/endroid/QrCode.git",
-                "reference": "1ad63f3767b9613073259fc12a742784d69951fa"
+                "reference": "5f799b9991b257d2d5761d7d91538b49e7cb55e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/endroid/QrCode/zipball/1ad63f3767b9613073259fc12a742784d69951fa",
-                "reference": "1ad63f3767b9613073259fc12a742784d69951fa",
+                "url": "https://api.github.com/repos/endroid/QrCode/zipball/5f799b9991b257d2d5761d7d91538b49e7cb55e8",
+                "reference": "5f799b9991b257d2d5761d7d91538b49e7cb55e8",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
                 "qr",
                 "qrcode"
             ],
-            "time": "2014-05-17 21:49:40"
+            "time": "2014-07-02 16:55:26"
         },
         {
             "name": "eventsd/eventsd",
@@ -62,7 +62,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eventsd/libeventsd.git",
-                "reference": "a4c89bb2d8c5654a10b8134ff3a966b835940000"
+                "reference": "cd6a68442ea2afeddc844cc261ac83558a90eb9a"
             },
             "type": "library",
             "autoload": {
@@ -77,7 +77,7 @@
                 }
             ],
             "description": "Eventsd library",
-            "time": "2014-06-26 08:37:27"
+            "time": "2014-07-08 10:34:21"
         },
         {
             "name": "eventsd/service",
@@ -85,7 +85,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eventsd/eventsd.git",
-                "reference": "6dcaae05bfd7ac32adbfd11397b2d8202e816d12"
+                "reference": "8713c5f58917c556489af1ca10fc1fdf4d0da6ae"
             },
             "require": {
                 "eventsd/eventsd": "dev-master",
@@ -103,7 +103,7 @@
                     "email": "matthew@baggett.me"
                 }
             ],
-            "time": "2014-07-01 16:13:35"
+            "time": "2014-07-08 10:29:07"
         },
         {
             "name": "filp/whoops",
@@ -170,7 +170,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FourOneOne/ActiveRecord.git",
-                "reference": "c282c1e7d46d55a5c426df60776c7e2711cf79b0"
+                "reference": "96cb8d98dd595b0ded8a30cf01f5cab8b9604dfd"
             },
             "type": "library",
             "autoload": {
@@ -185,7 +185,7 @@
                 }
             ],
             "description": "An active-record like implementation",
-            "time": "2014-06-22 22:50:51"
+            "time": "2014-07-08 10:29:09"
         },
         {
             "name": "fouroneone/session",
@@ -258,12 +258,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client.git",
-                "reference": "360c79a0955a1189c5374f8e79b21c62a3174a12"
+                "reference": "e2090308ff327007ccb0afe6e80894b4f45e7ab6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/360c79a0955a1189c5374f8e79b21c62a3174a12",
-                "reference": "360c79a0955a1189c5374f8e79b21c62a3174a12",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/e2090308ff327007ccb0afe6e80894b4f45e7ab6",
+                "reference": "e2090308ff327007ccb0afe6e80894b4f45e7ab6",
                 "shasum": ""
             },
             "require": {
@@ -295,7 +295,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2014-07-01 07:29:24"
+            "time": "2014-07-04 07:32:47"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -421,12 +421,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "4db00173f37cf8befcf197ee3f94997f4abf365e"
+                "reference": "235427950f1a280867d3667213e4a4cd23f19fe0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/4db00173f37cf8befcf197ee3f94997f4abf365e",
-                "reference": "4db00173f37cf8befcf197ee3f94997f4abf365e",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/235427950f1a280867d3667213e4a4cd23f19fe0",
+                "reference": "235427950f1a280867d3667213e4a4cd23f19fe0",
                 "shasum": ""
             },
             "require": {
@@ -468,7 +468,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2014-06-23 12:31:02"
+            "time": "2014-07-07 09:50:37"
         },
         {
             "name": "psr/log",
@@ -603,12 +603,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinergi/gearman.git",
-                "reference": "ee9ddccdd9ba7107bb578f1476423ab861b3a0b4"
+                "reference": "57ce2938b9061c152a44272f4f0a330f715535eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinergi/gearman/zipball/ee9ddccdd9ba7107bb578f1476423ab861b3a0b4",
-                "reference": "ee9ddccdd9ba7107bb578f1476423ab861b3a0b4",
+                "url": "https://api.github.com/repos/sinergi/gearman/zipball/57ce2938b9061c152a44272f4f0a330f715535eb",
+                "reference": "57ce2938b9061c152a44272f4f0a330f715535eb",
                 "shasum": ""
             },
             "require": {
@@ -653,7 +653,7 @@
                 "jobs",
                 "workers"
             ],
-            "time": "2014-06-22 13:43:47"
+            "time": "2014-07-02 23:55:04"
         },
         {
             "name": "slim/slim",
