@@ -36,7 +36,8 @@
         "wisembly/elephant.io": "dev-master",
         "google/apiclient": "1.0.*@dev",
         "thetwelvelabs/foursquare": "dev-master",
-        "sinergi/gearman": "dev-master"
+        "sinergi/gearman": "dev-master",
+        "predis/predis": "1.0.*@dev"
     },
 
     "autoload": {

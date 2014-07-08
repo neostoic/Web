@@ -20,12 +20,13 @@ if ( $processID == -1 ) {
   require_once("./vendor/autoload.php");
 
   require_once("./src/config/config.php");
-
+  $redis = new \Predis\Client();
 
   //Reduce errors
   error_reporting(~E_WARNING);
 
   Eventsd\PacketProcessor::bind_on_event_callback(function(\Eventsd\Models\Occurrence $occurrence){
+    return false;
     try{
       $occurrence->push();
     }catch(Exception $e){
